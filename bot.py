@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 CHECK_USER, ADD_SCAMMER_NICK, ADD_SCAMMER_PROOF, MODERATION_CHOICE, MODERATION_EDIT_NICK, MODERATION_EDIT_STATUS = range(6)
 
 # Файл для хранения данных
-DATA_FILE = 'scam_db.json'
+DATA_FILE = '/data/scam_db.json'
 
 # Загрузка данных из файла
 def load_data():
@@ -351,7 +351,7 @@ def cancel(update: Update, context: CallbackContext) -> int:
 
 def main() -> None:
     # Загрузка токена бота
-    with open('config.json') as f:
+    with open('/data/config.json') as f:
         config = json.load(f)
     token = config['token']
     
